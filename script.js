@@ -1171,10 +1171,20 @@ multipleSplats(parseInt(Math.random() * 20) + 5);
 
 let lastUpdateTime = Date.now();
 let colorUpdateTimer = 0.0;
+
+// CONFIGS FOR AUTOMATIC SPLATS
+const TIME_BETWEEN_SPLATS = 3.0;
+var TIME_SINCE_LAST_SPLAT = 0.0;
 update();
 
 function update () {
     const dt = calcDeltaTime();
+    TIME_SINCE_LAST_SPLAT += dt;
+    if (TIME_SINCE_LAST_SPLAT >= TIME_BETWEEN_SPLATS) {
+        multipleSplats(parseInt(Math.random() * 20) + 5);
+        TIME_SINCE_LAST_SPLAT = 0.0;
+    }
+
     if (resizeCanvas())
         initFramebuffers();
     updateColors(dt);
