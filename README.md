@@ -1,3 +1,5 @@
+### *Fork made as a favor to a friend who wanted an "automatic" version of the original project
+
 # WebGL Fluid Simulation
 
 [Play here](https://paveldogreat.github.io/WebGL-Fluid-Simulation/)
